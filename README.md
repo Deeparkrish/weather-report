@@ -1,2 +1,4 @@
 # weather-report
-a weather dashboard with a  weather outlook for multiple cities
+A weather dashboard with a  weather outlook for multiple cities
+
+https://deeparkrish.github.io/weather-report/
