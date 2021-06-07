@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+</head>
+<body class="flex-column min-100-vh">
+    <!-- Heading  -->
+    <header class ="hero">
+        <!-- <div class="d-flex p-2">I'm a flexbox container!</div> -->
+        <h1 class ="justify-center">Weather Dashboard</h1>
+    </header>
+
+    
+        <main class="flex-row justify-space-between">
+            <!-- SIDE BAR  -->
+            <div class="col-12 col-md-4">
+                <!-- heading search by city  -->
+                <!-- Create a form for searching the city name  -->
+                <div class= "card">
+                    <form class ="searchform" id="search-form" class="card-body">
+                        <h4>Search for a City</h4>
+                        <input name="cityname" id="city-name" type="text" autofocus="true" class="form-input" placeholder="city name" />
+                        <button type="submit" class="btn">Search</button>
+                    </form>
+                </div>
+                <div class ="card">
+                <!-- create a card layout of buttons in a div , each button with an id or data-obj -->
+                    <div class ="card-header"></div>
+                    <div class ="card-body flex-column" id ="city-buttons">
+                        <button class="btn" data-cityname="austin">Austin</button>
+                        <button class="btn" data-cityname="chicago">Chicago</button>
+                        <button class="btn" data-cityname="newyork">New York</button>
+                        <button class="btn" data-cityname="orlando">Orlando</button>
+                        <button class="btn" data-cityname="sanfran">San Franciso</button>
+                        <button class="btn" data-cityname="seattle">Seattle</button>
+                        <button class="btn" data-cityname="denver">Denver</button>
+                        <button class="btn" data-cityname="atlanta">Atlanta</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF SIDE BAR  -->
+            <div div class="col-12 col-md-8">         
+                <!-- city Name (h5)  followed by date(Moment.js) and an icon(favicon/Iconic)-->
+                    
+                    <h2 class="subtitle">city name <span id="search-city"></span></h2>
+                    <div id ="weather-container" class="list-group">
+                         <!-- Create label for Temp use span tags  -->
+                        <!-- Create label for humidity use span tags  -->
+                        <!-- Create label for wind use span tags -->
+                        <!-- Create label for UV-index use span tags  -->         
+                    </div>
+    
+                
+                <div class ="container weather-widgets">
+                    <!-- Add a heading  -->
+                    <!-- Create 5 cards indicating 5 day forecast  -->
+                </div>
+            
+            </div>  
+
+        </main>
+   
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+ <!-- jQuery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src ="./assets/js/script.js" ></script>
+</html>
