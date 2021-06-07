@@ -27,10 +27,9 @@
 <body class="flex-column min-100-vh">
     <!-- Heading  -->
     <header class ="hero">
-        <!-- <div class="d-flex p-2">I'm a flexbox container!</div> -->
         <h1 class ="justify-center">Weather Dashboard</h1>
     </header>
-
+    
     
         <main class="flex-row justify-space-between">
             <!-- SIDE BAR  -->
@@ -38,44 +37,49 @@
                 <!-- heading search by city  -->
                 <!-- Create a form for searching the city name  -->
                 <div class= "card">
-                    <form class ="searchform" id="search-form" class="card-body">
+                    <h4 class= "card-header">Search for a City</h4>
+                    <form id="search-form" class="card-body">
                         <h4>Search for a City</h4>
-                        <input name="cityname" id="city-name" type="text" autofocus="true" class="form-input" placeholder="city name" />
-                        <button type="submit" class="btn">Search</button>
+                        <input name="cityname" id="city-name" type="text" autofocus="true" placeholder ="city name" class="form-input" />
+                        <button  id = "search-btn" type="submit" class="btn">Search</button>
                     </form>
                 </div>
                 <div class ="card">
                 <!-- create a card layout of buttons in a div , each button with an id or data-obj -->
-                    <div class ="card-header"></div>
-                    <div class ="card-body flex-column" id ="city-buttons">
-                        <button class="btn" data-cityname="austin">Austin</button>
-                        <button class="btn" data-cityname="chicago">Chicago</button>
-                        <button class="btn" data-cityname="newyork">New York</button>
-                        <button class="btn" data-cityname="orlando">Orlando</button>
-                        <button class="btn" data-cityname="sanfran">San Franciso</button>
-                        <button class="btn" data-cityname="seattle">Seattle</button>
-                        <button class="btn" data-cityname="denver">Denver</button>
-                        <button class="btn" data-cityname="atlanta">Atlanta</button>
-                    </div>
+                    <h4 class ="card-header">Click on a city Name</h4>
+                        <div class ="card-body flex-column" id ="city-buttons">
+                            <button class="btn" data-cityname="austin">Austin</button>
+                            <button class="btn" data-cityname="chicago">Chicago</button>
+                            <button class="btn" data-cityname="newyork">New York</button>
+                            <button class="btn" data-cityname="orlando">Orlando</button>
+                            <button class="btn" data-cityname="sanfran">San Franciso</button>
+                            <button class="btn" data-cityname="seattle">Seattle</button>
+                            <button class="btn" data-cityname="denver">Denver</button>
+                            <button class="btn" data-cityname="atlanta">Atlanta</button>
+                        </div>             
                 </div>
             </div>
             <!-- END OF SIDE BAR  -->
             <div div class="col-12 col-md-8">         
                 <!-- city Name (h5)  followed by date(Moment.js) and an icon(favicon/Iconic)-->
                     
-                    <h2 class="subtitle">city name <span id="search-city"></span></h2>
+                    <h4 class="subtitle"><span id="search-city"></span></h4>
                     <div id ="weather-container" class="list-group">
                          <!-- Create label for Temp use span tags  -->
+                         <p>Temp:</p>
                         <!-- Create label for humidity use span tags  -->
+                        <p>Humidity:</p>
                         <!-- Create label for wind use span tags -->
+                        <p>Wind:</p>
                         <!-- Create label for UV-index use span tags  -->         
+                        <p>UV-index :</p>
                     </div>
     
                 
-                <div class ="container weather-widgets">
+                    <div class ="container weather-widgets">
                     <!-- Add a heading  -->
                     <!-- Create 5 cards indicating 5 day forecast  -->
-                </div>
+                    </div>
             
             </div>  
 
