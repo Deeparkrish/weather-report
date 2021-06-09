@@ -4,7 +4,6 @@ var cityButtonsEl =document.querySelector("#city-buttons");
 var citySelectedEl =document.querySelector("#search-city");
 var weatherIconImageEl =document.querySelector("#weather-icon");
 
-
 var humidityEl= document.querySelector("#humidity-city");
 var tempEl = document.querySelector("#temp-city");
 var windEl = document.querySelector("#wind-city");
@@ -19,6 +18,16 @@ function toTitleCase(str) {
     });
 }
 
+var colorcodeUV = function(uvi){
+uvi= parseFloat(uvi);
+ if (uvi>=0 && uvi <=2) {uvindexEl.classList.add("bg-success", "text-white");}
+else if(uvi >=3 && uvi<=5){uvindexEl.classList.add("bg-warning", "text-white");}
+else if(uvi ==6 || uvi==7){uvindexEl.classList.add("bg-amber", "text-white");}
+else if (uvi >=8 && uvi<=10){uvindexEl.classList.add("bg-danger", "text-white");}
+else { uvindexEl.classList.add("bg-purple", "text-white");
+
+}
+}
 // get the uvindex  of a city
 var getUVIndex = function (lati, longi){
     const uvURL = "https://api.openweathermap.org/data/2.5/onecall?lat="+lati+"&lon="+longi+"&exclude=hourly,daily&units=imperial&appid=6acd9728daeb3f35f10da98fa3f7eb4b"
@@ -26,7 +35,7 @@ var getUVIndex = function (lati, longi){
     .then(function(response) {
     if(response.ok){
         response.json().then(function(data) {
-            uvindexEl.innerHTML =" UV-index: " + data.current.uvi; 
+            uvindexEl.innerHTML = data.current.uvi; 
             var uvnumber = parseInt(data.current.uvi) ;
             colorcodeUV(uvnumber);            
         });
@@ -54,7 +63,6 @@ var displayCityWeather= function(chosenCityName, data)
 
     getUVIndex(cityLat,cityLon); 
     
-   
 
     tempEl.innerHTML ="Temperature  :"+data.main.temp+"°F";
     humidityEl.innerHTML ="Humidity :"+data.main.humidity +"%";
@@ -80,11 +88,11 @@ var getWeatherInfo =function(city){
         else {
         alert('City Not found!');
             }  
-    });
-    //  .catch(function(error) {
-    //    alert("Unable to connect to Weathermap");
-    // });
-}
+    })
+  .catch(function(error) {
+   alert("Unable to connect to Weathermap");
+ });
+ }
 
 var formSubmitHandler = function(event) {
     event.preventDefault(); 
@@ -111,8 +119,3 @@ var buttonClickHandler =function (event){
       }
 };
 cityButtonsEl.addEventListener("click", buttonClickHandler);
- // if (UVIndexEl>=0 && UVIndexEl <=2) {uvindexEl.classList.add("bg-success", "text-white");}
-    // else if(UVIndexEl >=3 && UVIndexEl<=5){uvindexEl.classList.add("bg-danger","bg-warning", "text-white");}
-    // else if(UVIndexEl ==6 || UVIndexEl==7){uvindexEl.classList.add("bg-warning", "text-white");}
-    // else if (UVIndexEl >=8 && UVIndexEl<=10){uvindexEl.classList.add("bg-danger", "text-white");}
-    // else {uvindexEl.classList.add("bg-danger", "bg-primary", "text-white");}

@@ -144,7 +144,13 @@
   .icon-success {
     color: rgb(29, 153, 255);
   }
-  
+  .bg-amber {
+    background-color: rgb(255, 145, 0); 
+  }
+
+  .bg-purple {
+    background-color:rgb(137, 137, 228);
+  }
   /* CARDS */
   .card {
     margin: 0 0 20px 0;
