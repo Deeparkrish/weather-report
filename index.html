@@ -38,7 +38,7 @@
                 <!-- Create a form for searching the city name  -->
                 <div class= "card">
                     <form id="search-form" class="card-body">
-                        <h4>Search for a City</h4>
+                        <h4 class ="card-header">Search for a City</h4>
                         <input name="cityname" id="city-name" type="text" autofocus="true" placeholder ="city name" class="form-input" />
                         <button  id = "search-btn" type="submit" class="btn">Search</button>
                     </form>
@@ -59,38 +59,93 @@
                 </div>
             </div>
             <!-- END OF SIDE BAR  -->
-            <div div class="col-12 col-md-8 flex-column">         
-                <!-- city Name (h5)  followed by date(Moment.js) and an icon(favicon/Iconic)-->
-                <div class="container">
-                    <div class = "row">  
-                    <!-- <div class="card"> -->
-                        <h4><span id="search-city"></span></h4>
-                        <img id ="weather-icon"></img>                
-                    </div>
-                    <div id ="card-body">
-                         <!-- Create label for Temp use span tags  -->
-                         <h6><span id="temp-city"></span></h6>
-                        <!-- Create label for humidity use span tags  -->
-                        <h6><span id="humidity-city"></span></h6>
-                        <!-- Create label for wind use span tags -->
-                        <h6><span id="wind-city"></span></h6>
-                        <!-- Create label for UV-index use span tags  -->         
-                        <h6  id ="uv-title"><span id="uvindex-city"></span></h6>
-                        </div>
+            <div div class="col-12 col-md-8 flex-column  justify-space-between">         
+                    <!-- city Name (h5)  followed by date(Moment.js) and an icon(favicon/Iconic)-->
+                    <div class ="container">
+                    <div class = "row"> 
+                        <div class="container flex-column mb-3">                  
+                        <!-- <div class="card"> -->
+                            <h4><span id="search-city"></span></h4>
+                            <img id ="weather-icon"></img>                
+                        <!-- </div> -->
+                            <div id ="card-body">
+                                <!-- Create label for Temp use span tags  -->
+                                <h6><span id="temp-city"></span></h6>
+                                <br>
+                                <!-- Create label for humidity use span tags  -->
+                                <h6><span id="humidity-city"></span></h6>
+                                <br>
+                                <!-- Create label for wind use span tags -->
+                                <h6><span id="wind-city"></span></h6>
+                                <br>
+                                <!-- Create label for UV-index use span tags  -->         
+                                <h6  id ="uv-title"><span id="uvindex-city"></span></h6>
+                                <br>
+                            </div>
+                        </div> 
                     </div> 
+                </div>
+                <div class ="container">           
+                    <div class="row mt-3">
+                        <!-- Add a heading  -->
+                        <h5>5 Days Forecast</h5>               
+                                <div class ="container  flex-row justify-space-between">
+                                <div class="col-2.5 justify-space-between">
+                                    <div class="card  five-cards mt-3">
+                                        <!-- id's are numbered 0-4 to make loop easier, see script.js -->
+                                        <div class="card-title" id="day0">Date</div>
+                                        <img class="icons" id="icon0">
+                                        <p id="highday0">High:</p>
+                                        <p id="lowday0">Low:</p>
+                                        <p id="humday0">Humidity:</p>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-2.5">
+                                    <div class="card  five-cards mt-3">
+                                        <!-- id's are numbered 0-4 to make loop easier, see script.js -->
+                                        <div class="card-title" id="day0">Date</div>
+                                        <img class="icons" id="icon0">
+                                        <p id="highday0">High:</p>
+                                        <p id="lowday0">Low:</p>
+                                        <p id="humday0">Humidity:</p>
+                                    </div>
+                                </div>
+                            
+                                <div class="col-2.5">
+                                    <div class="card  five-cards mt-3">
+                                        <!-- id's are numbered 0-4 to make loop easier, see script.js -->
+                                        <div class="card-title" id="day0">Date</div>
+                                        <img class="icons" id="icon0">
+                                        <p id="highday0">High:</p>
+                                        <p id="lowday0">Low:</p>
+                                        <p id="humday0">Humidity:</p>
+                                    </div>
+                                </div>
+                                <div class="col-2.5">
+                                    <div class="card  five-cards mt-3">
+                                        <!-- id's are numbered 0-4 to make loop easier, see script.js -->
+                                        <div class="card-title" id="day0">Date</div>
+                                        <img class="icons" id="icon0">
+                                        <p id="highday0">High:</p>
+                                        <p id="lowday0">Low:</p>
+                                        <p id="humday0">Humidity:</p>
+                                    </div>
+                                </div>
+                                <div class="col-2.5">
+                                    <div class="card  five-cards mt-3">
+                                        <!-- id's are numbered 0-4 to make loop easier, see script.js -->
+                                        <div class="card-title" id="day0">Date</div>
+                                        <img class="icons" id="icon0">
+                                        <p id="highday0">High:</p>
+                                        <p id="lowday0">Low:</p>
+                                        <p id="humday0">Humidity:</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>           
                 </div> 
-                   
-                
-    
-                
-                    <div class ="row weather-widgets">
-                    <!-- Add a heading  -->
-                    <!-- Create 5 cards indicating 5 day forecast  -->
-                    </div>
-                
-            
-            </div>  
-
+            </div> 
         </main>
    
 </body>
