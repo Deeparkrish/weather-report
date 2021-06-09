@@ -44,7 +44,7 @@
                         <button  id = "search-btn" type="submit" class="btn">Search</button>
                     </form>
                 </div>
-                <div class ="card">
+                <div class ="card hide">
                 <!-- create a card layout of buttons in a div , each button with an id or data-obj -->
                     <h4 class ="card-header">Click on a city Name</h4>
                         <div class ="card-body flex-column" id ="city-buttons">
@@ -60,12 +60,15 @@
                 </div>
             </div>
             <!-- END OF SIDE BAR  -->
-            <div div class="col-12 col-md-8">         
+            <div div class="col-12 col-md-8 flex-column">         
                 <!-- city Name (h5)  followed by date(Moment.js) and an icon(favicon/Iconic)-->
-                   
-                    <h4 class="subtitle"><span id="search-city"></span></h4>
-                    
-                    <div id ="weather-container">
+                <div class="container">
+                    <div class = "row">  
+                    <!-- <div class="card"> -->
+                        <h4><span id="search-city"></span></h4>
+                        <img id ="weather-icon"></img>                
+                    </div>
+                    <div id ="card-body">
                          <!-- Create label for Temp use span tags  -->
                          <h6><span id="temp-city"></span></h6>
                         <!-- Create label for humidity use span tags  -->
@@ -74,13 +77,18 @@
                         <h6><span id="wind-city"></span></h6>
                         <!-- Create label for UV-index use span tags  -->         
                         <h6><span id="uvindex-city"></span></h6>
-                    </div>
+                        </div>
+                    </div> 
+                </div> 
+                   
+                
     
                 
                     <div class ="container weather-widgets">
                     <!-- Add a heading  -->
                     <!-- Create 5 cards indicating 5 day forecast  -->
                     </div>
+                
             
             </div>  
 

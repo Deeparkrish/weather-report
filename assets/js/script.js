@@ -49,11 +49,16 @@ var displayCityWeather= function(chosenCityName, data)
     var thisDate = moment().format('MM/DD/YY');
     var chosenCityTitle=toTitleCase(chosenCityName);
 
-    citySelectedEl.innerHTML =chosenCityTitle+" "+thisDate;
+   
     tempEl.innerHTML ="Temperature  :"+data.main.temp+"°F";
     humidityEl.innerHTML ="Humidity :"+data.main.humidity +"%";
     windEl.innerHTML ="Wind :"+ data.wind.speed +"MPH";
-    
+    weatherIconURL = "http://openweathermap.org/img/wn/"+data.weather[0].icon+".png"
+    console.log(weatherIconURL);
+    weatherIconImageEl.setAttribute("src",weatherIconURL);
+
+    citySelectedEl.innerHTML =chosenCityTitle+" "+thisDate;
+    citySelectedEl.append(weatherIconImageEl);
     var cityLat = data.coord.lat;
     var cityLon = data.coord.lon;
     var UVIndexEl = getUVIndex(cityLat,cityLon);
