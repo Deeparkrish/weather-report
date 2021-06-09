@@ -35,7 +35,10 @@ var getUVIndex = function (lati, longi){
     .then(function(response) {
     if(response.ok){
         response.json().then(function(data) {
+            var uvTitleEl = document.querySelector("#uv-title");
+            uvTitleEl.innerHTML="UV-index :"
             uvindexEl.innerHTML = data.current.uvi; 
+            uvTitleEl.appendChild(uvindexEl);
             var uvnumber = parseInt(data.current.uvi) ;
             colorcodeUV(uvnumber);            
         });
