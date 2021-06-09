@@ -26,20 +26,19 @@ var getUVIndex = function (lati, longi){
     .then(function(response) {
     if(response.ok){
         response.json().then(function(data) {
-            console.log(data.current.uvi);
-        return (data.current.uvi);
-        
+            uvindexEl.innerHTML =" UV-index: " + data.current.uvi; 
+            var uvnumber = parseInt(data.current.uvi) ;
+            colorcodeUV(uvnumber);            
         });
     }
     else {
-        alert('City Not found!'); 
-        
+        alert('City Not found!');      
     } 
      })  
-    
+    return ;
 }
 
-// Display the city 's current weather details 
+// Display the city's current weather details 
 var displayCityWeather= function(chosenCityName, data) 
 {
     if (data.length === 0) {
@@ -48,26 +47,23 @@ var displayCityWeather= function(chosenCityName, data)
     }
     var thisDate = moment().format('MM/DD/YY');
     var chosenCityTitle=toTitleCase(chosenCityName);
+    weatherIconURL = "http://openweathermap.org/img/wn/"+data.weather[0].icon+".png"
 
+    var cityLat = data.coord.lat;
+    var cityLon = data.coord.lon;
+
+    getUVIndex(cityLat,cityLon); 
+    
    
+
     tempEl.innerHTML ="Temperature  :"+data.main.temp+"°F";
     humidityEl.innerHTML ="Humidity :"+data.main.humidity +"%";
-    windEl.innerHTML ="Wind :"+ data.wind.speed +"MPH";
-    weatherIconURL = "http://openweathermap.org/img/wn/"+data.weather[0].icon+".png"
-    console.log(weatherIconURL);
+    windEl.innerHTML ="Wind :"+ data.wind.speed +"MPH"; 
     weatherIconImageEl.setAttribute("src",weatherIconURL);
 
     citySelectedEl.innerHTML =chosenCityTitle+" "+thisDate;
-    citySelectedEl.append(weatherIconImageEl);
-    var cityLat = data.coord.lat;
-    var cityLon = data.coord.lon;
-    var UVIndexEl = getUVIndex(cityLat,cityLon);
-    console.log(UVIndexEl);
-    // if (UVIndexEl>=0 && UVIndexEl <=2) {uvindexEl.classList.add("bg-success", "text-white");}
-    // else if(UVIndexEl >=3 && UVIndexEl<=5){uvindexEl.classList.add("bg-danger","bg-warning", "text-white");}
-    // else if(UVIndexEl ==6 || UVIndexEl==7){uvindexEl.classList.add("bg-warning", "text-white");}
-    // else if (UVIndexEl >=8 && UVIndexEl<=10){uvindexEl.classList.add("bg-danger", "text-white");}
-    // else {uvindexEl.classList.add("bg-danger", "bg-primary", "text-white");}
+    citySelectedEl.append(weatherIconImageEl); 
+    
 };
 
 var getWeatherInfo =function(city){
@@ -96,9 +92,7 @@ var formSubmitHandler = function(event) {
     chosenCityName.toLowerCase();
     if (chosenCityName) {   
         getWeatherInfo(chosenCityName);
-        cityInputEl.value = "";
-       
-    
+        cityInputEl.value = ""; 
       } else {
         alert("Please enter a city name");
       }
@@ -117,3 +111,8 @@ var buttonClickHandler =function (event){
       }
 };
 cityButtonsEl.addEventListener("click", buttonClickHandler);
+ // if (UVIndexEl>=0 && UVIndexEl <=2) {uvindexEl.classList.add("bg-success", "text-white");}
+    // else if(UVIndexEl >=3 && UVIndexEl<=5){uvindexEl.classList.add("bg-danger","bg-warning", "text-white");}
+    // else if(UVIndexEl ==6 || UVIndexEl==7){uvindexEl.classList.add("bg-warning", "text-white");}
+    // else if (UVIndexEl >=8 && UVIndexEl<=10){uvindexEl.classList.add("bg-danger", "text-white");}
+    // else {uvindexEl.classList.add("bg-danger", "bg-primary", "text-white");}
