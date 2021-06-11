@@ -530,3 +530,10 @@ header h1 {
 .hide {
   display:none;
 }
+.weather-widgets{
+  background-color:rgb(3, 18, 61);
+  border:none;
+  color: whitesmoke;
+  font-style: italic;
+  font-size:.5em ;
+}

@@ -30,7 +30,6 @@
         <h1 class ="justify-center">Weather Dashboard</h1>
     </header>
     
-    
         <main class="flex-row justify-space-between">
             <!-- SIDE BAR  -->
             <div class="col-12 col-md-4">
@@ -46,7 +45,7 @@
                     </div>
                 </div>
                 <div id ="city-list"class ="card hide">
-                <!-- create a card layout of buttons in a div , each button with an id or data-obj -->
+                    <!-- create a card layout of buttons in a div , each button with an id or data-obj -->
                     <h4 class ="card-header">Recent Search History</h4>
                         <div class ="card-body flex-column" id ="city-buttons">
                             <!-- City buttons  to be dynamically added based on search  -->
@@ -54,21 +53,17 @@
                 </div>
             </div>
             <!-- END OF SIDE BAR  -->
-            <!-- <div class="search-data">
-                <ul id="search-list"></ul>
-                </ul>
-            </div> -->
+            
 
-            <div class="col-12 col-md-8 flex-column  justify-space-between">         
-                    <!-- city Name (h5)  followed by date(Moment.js) and an icon(favicon/Iconic)-->
-                    
-                <div class = "row"> 
+                <div class="col-12 col-md-8 flex-column  justify-space-between">         
+                    <!-- city Name (h5)  followed by date(Moment.js) and an icon(favicon/Iconic)-->        
+                    <div class = "row"> 
                         <div class="col-12 flex-column mb-3">                  
                                  
                             <h1><span id="search-city"></span></h1>
                             <img id ="weather-icon"></img>                
                         
-                            <div id ="card-body">
+                            <div class ="card-body">
                                 <!-- Create label for Temp use span tags  -->
                                 <h6><span id="temp-city"></span></h6>
                                 <br>
@@ -83,49 +78,72 @@
                                 <br>
                             </div>
                         </div> 
-                </div> 
+                    </div> 
                     
-                <div class="row mt-3" id ="forecast-container">
+                    <div class="row mt-3" id ="forecast-container">
                         <!-- Add a heading  -->
                         <div class = " hide col-12" id ="fiveday-forecast">
-                            <h5 class = "justify-center" >Five Day Forecast</h5>               
-                            <div class=" card-deck text-center style="color:grey">
-                                <div class="card  m-2 ">
+                            <h2 class = "justify-center" >Five Day Forecast</h2>               
+                            <div class=" card-deck text-left style="color:grey">
+                                <div class="card  weather-widgets m-2 ">
                                         <!-- id's are numbered 0-4 to make loop easier, see script.js -->
-                                    <div class="card-body" id="day-0">             
+                                    <div class="card-body " id="day-1">             
                                         <!-- Day 1 : Weather Icon , temp,humidity ,wind   -->
+                                        <p id="date1"></p>
+                                        <img id ="img1"></img>
+                                         <p id ="temp1"></p>
+                                        <p id ="hum1"></p>
+                                        <p id="wind1"></p> 
                                     </div>
                                 </div>
-                                <div class="card  m-2 ">        
-                                    <div class="card-body" id="day-1">    
+                                <div class="card weather-widgets m-2 ">        
+                                    <div class="card-body" id="day-2">    
                                         <!-- Day 2 : Weather Icon , temp,humidity ,wind   -->
+                                        <p id="date2"></p>
+                                        <img id ="img2"></img>
+                                        <p id ="temp2"></p>
+                                        <p id ="hum2"></p>
+                                        <p id="wind2"></p> 
                                     </div>
                                 </div>
-                                <div class="card  m-2 ">                      
-                                    <div class="card-body" id="day-2">
+                                <div class="card weather-widgets m-2 ">                      
+                                    <div class="card-body" id="day-3">
                                         
                                         <!-- Day 3 :Weather Icon , temp,humidity ,wind-->
+                                        <p id="date3"></p>
+                                        <img id ="img3"></img>
+                                        <p id ="temp3"></p>
+                                        <p id ="hum3"></p>
+                                        <p id="wind3"></p> 
                                     </div>
                                 </div>
-                                <div class="card  m-2 ">           
-                                    <div class="card-body" id="day-3">
-
-                                        <!-- Day 4 :Weather Icon , temp,humidity ,wind -->
-                                    </div>
-                                </div>
-                                <div class="card  m-2 ">
+                                <div class="card weather-widgets m-2 ">           
                                     <div class="card-body" id="day-4">
+                                        <!-- Day 4 :Weather Icon , temp,humidity ,wind -->
+                                        <p id="date4"></p>
+                                        <img id ="img4"></img>
+                                         <p id ="temp4"></p>
+                                        <p id ="hum4"></p> 
+                                        <p id="wind4"></p>
+                                    </div>
+                                </div>
+                                <div class="card weather-widgets m-2 ">
+                                    <div class="card-body" id="day-5">
                                        
                                         <!-- Day 5:Weather Icon , temp,humidity ,wind -->
+                                        <p id="date5"></p>
+                                        <img id ="img5"></img>
+                                        <p id ="temp5"></p>
+                                        <p id ="hum5"></p>
+                                        <p id="wind5"></p> 
                                     </div>
                                 </div>
                             </div>           
                         </div> 
-                </div> 
-            </div>
-        </main>
-   
-</body>
+                    </div> 
+                </div>
+        </main>  
+    </body>
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
  <!-- jQuery UI -->
