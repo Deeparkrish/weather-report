@@ -98,13 +98,13 @@ var displayFivedayForecast =function (data){
      imgEl.setAttribute("src",iconURL);
      dayContainer.appendChild(imgEl);
      var temperEl = document.querySelector("#temp"+i);
-     temperEl.innerHTML= data.list[i].temp.max + "°F";
+     temperEl.innerHTML= "Temp:"+ data.list[i].temp.max + "°F";
      dayContainer.appendChild(temperEl);
      var humEl = document.querySelector("#hum"+i);
-     humEl.innerHTML =data.list[i].humidity + "%";
+     humEl.innerHTML ="Humdity:"+data.list[i].humidity + "%";
      dayContainer.appendChild(humEl);
     var winEl =document.querySelector("#wind"+i);
-    winEl.innerHTML=data.list[i].speed +"MPH";
+    winEl.innerHTML= "Wind:"+ data.list[i].speed +"MPH";
     dayContainer.appendChild(winEl);
     
     }
@@ -163,9 +163,9 @@ var displayCityWeather= function(chosenCityName, data)
     getUVIndex(cityLat,cityLon); 
     
     // Display temeprature , humidity
-    tempEl.innerHTML ="Temperature  :"+data.main.temp+"°F";
-    humidityEl.innerHTML ="Humidity :"+data.main.humidity +"%";
-    windEl.innerHTML ="Wind :"+ data.wind.speed +"MPH"; 
+    tempEl.innerHTML ="Temperature  : "+data.main.temp+"°F";
+    humidityEl.innerHTML ="Humidity : "+data.main.humidity +"%";
+    windEl.innerHTML ="Wind : "+ data.wind.speed +"MPH"; 
 
     //Add cityname ,date and weather icon 
     weatherIconImageEl.setAttribute("src",weatherIconURL);
@@ -197,14 +197,13 @@ var getWeatherInfo =function(city){
      else {
        alert('City Not found!: For cities having two words please enter spaces between,Ex: Newyork - New York');
 
-        throw new Error(response.error);
-        return false ;
+        //throw new Error(response.error);
+        document.location.replace("./index.html");
+
     } 
  })  
   .catch(function(error) {
-   alert("Unable to provide data");
-  
-   
+   alert("Unable to provide data");  
  });
 
  }
