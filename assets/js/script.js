@@ -12,7 +12,7 @@ var uvindexEl = document.querySelector("#uvindex-city");
 var MY_API_KEY = "HvaacROi9w5oQCDYHSIk42eiDSIXH3FN"; // key to fetch data from weatherapi.org
 var chosenCityName; //variable to store city name 
 //Array of objects to store name-score in local storage 
-var cityNameArr = JSON.parse(localStorage.getItem("cityNameArr")) ||[];
+var cityNameArr = JSON.parse(localStorage.getItem("city")) ||[];
 var dayArr=[]; // To store 5 dates  for five day forecast
 /* END OF  VARIABLE DECLARATION */
 
@@ -140,7 +140,7 @@ var displayCityWeather= function(chosenCityName, data)
     thisDate = thisDate*1000;
     const cityDateObj = new Date(thisDate);
     thisDate = cityDateObj.toLocaleDateString();
-    var zone = cityDateObj.toLocaleDateString('de-DE',{timeZoneName:'short'})
+   
 
    
     //Set the first letter of the City name to uppercase 
@@ -150,14 +150,6 @@ var displayCityWeather= function(chosenCityName, data)
     // find the time zone 
     var timeOffset =data.timezone;
     
-    //var m =moment.tz('America/Los_Angeles').format('z') ;
-
-    //console.log(m);
-
-    //var zone = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
-    console.log(zone)
-
-    // console.log(data);
     
     // Get the latitude and longitude to determine Uv-index 
     var cityLat = data.coord.lat;
@@ -185,6 +177,8 @@ var displayCityWeather= function(chosenCityName, data)
 // get weather info of a city 
 var getWeatherInfo =function(city){
     console.log("Get weather info function");
+    var found = true;
+   //displayButtons();
     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=6acd9728daeb3f35f10da98fa3f7eb4b"
     fetch (apiUrl)
     .then(function(response) {
@@ -192,7 +186,9 @@ var getWeatherInfo =function(city){
          response.json().then(function(data) {
                 console.log(data);
                 displayCityWeather(city,data)
-            });          
+                saveInLocalStorage(chosenCityName);
+            });    
+
         }
         else {
         alert('City Not found!: For cities having two words please enter spaces between,Ex: Newyork - New York');
@@ -201,17 +197,23 @@ var getWeatherInfo =function(city){
   .catch(function(error) {
    alert("Unable to connect to Weathermap");
  });
- return;
+ console.log(found);
+ return found;
  }
 // Display search history button 
 var displayButtons = function()
 {
     var citArr= cityNameArr;
+
+    console.log(citArr);
+
     while(buttonContainerEl.lastChild != null) {
     buttonContainerEl.removeChild(buttonContainerEl.lastChild);
     } // remove previous  children 
 
     // refresh the button list 
+    console.log(citArr);
+
     if(citArr != null) {
     for ( let i=0;i<citArr.length; i++){
          var buttonEl = document.createElement("button");
@@ -220,7 +222,10 @@ var displayButtons = function()
         buttonContainerEl.appendChild(buttonEl);
 
      }
-     document.querySelector("#city-list").classList.remove("hide"); //display the button element container
+    
+     if(citArr.length)
+        document.querySelector("#city-list").classList.remove("hide"); //display the button element container
+     
     }
 
 }
@@ -236,12 +241,15 @@ var saveInLocalStorage =function(city){
 }
 // Event handler when user submits the city name     
 var formSubmitHandler = function(event) {
+    
     event.preventDefault(); 
     chosenCityName = cityInputEl.value.trim();
     chosenCityName.toLowerCase();
     if (chosenCityName) {    
-        saveInLocalStorage(chosenCityName);
-        getWeatherInfo(chosenCityName);
+        if(getWeatherInfo(chosenCityName) == true){
+            console.log(chosenCityName);
+             //saveInLocalStorage(chosenCityName);
+        }
         cityInputEl.value = ""; 
       } else {
         alert("Please enter a city name");
