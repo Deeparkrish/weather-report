@@ -49,7 +49,7 @@ var getUVIndex = function (lati, longi){
         });
     }
     else {
-        alert('City Not found!');    
+        alert(' For cities having two words please enter spaces between,Ex: Newyork - New York');    
     } 
      })  
     return ;
@@ -119,7 +119,7 @@ var getfiveDayForecast =function(lati,longi){
             });
         }
         else {
-        alert('City Not found!');
+        alert('City Not found! For cities having two words please enter spaces between,Ex: Newyork - New York');
             }  
     })
     .catch(function(error) {
@@ -140,7 +140,8 @@ var displayCityWeather= function(chosenCityName, data)
     thisDate = thisDate*1000;
     const cityDateObj = new Date(thisDate);
     thisDate = cityDateObj.toLocaleDateString();
-   
+    var zone = cityDateObj.toLocaleDateString('de-DE',{timeZoneName:'short'})
+
    
     //Set the first letter of the City name to uppercase 
     var chosenCityTitle=toTitleCase(chosenCityName);
@@ -148,7 +149,15 @@ var displayCityWeather= function(chosenCityName, data)
 
     // find the time zone 
     var timeOffset =data.timezone;
+    
+    //var m =moment.tz('America/Los_Angeles').format('z') ;
 
+    //console.log(m);
+
+    //var zone = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
+    console.log(zone)
+
+    // console.log(data);
     
     // Get the latitude and longitude to determine Uv-index 
     var cityLat = data.coord.lat;
@@ -173,7 +182,7 @@ var displayCityWeather= function(chosenCityName, data)
     getfiveDayForecast(cityLat,cityLon);
     
 };
-
+// get weather info of a city 
 var getWeatherInfo =function(city){
     console.log("Get weather info function");
     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=6acd9728daeb3f35f10da98fa3f7eb4b"
@@ -186,7 +195,7 @@ var getWeatherInfo =function(city){
             });          
         }
         else {
-        alert('City Not found!');
+        alert('City Not found!: For cities having two words please enter spaces between,Ex: Newyork - New York');
          }  
     })
   .catch(function(error) {
