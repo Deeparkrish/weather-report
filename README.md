@@ -28,9 +28,11 @@ https://openweathermap.org/api
 * Displaying  all cities with same name in multpile  geogrpahiclocations and allowing the user to click on his choice, upon which the corresponding weather data
   is displayed.
 ## Pseudocode:
-![Wireframe](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/wireframe.jpeg)
+![Webpage](https://github.com/Deeparkrish/weather-report/blob/main/assets/img/pseudo1.jpeg)
 
-![Webpage](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/screencapture-file-Users-deepakrishnan-Mycode-ChallengeRepo-MyPortfolio-index-html-2021-05-16-23_26_28.png)
+![Webpage](https://github.com/Deeparkrish/weather-report/blob/main/assets/img/psuedo2.jpeg)
+
+![Webpage](https://github.com/Deeparkrish/weather-report/blob/main/assets/img/weather2.png)
 
 
 ## Built With
