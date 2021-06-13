@@ -111,7 +111,7 @@ var displayFivedayForecast =function (data){
 }
 // Fetch the five day forecast from today
 var getfiveDayForecast =function(lati,longi){
-    const fivedayURL ="http://api.openweathermap.org/data/2.5/forecast/daily?lat="+lati+"&lon="+longi+"&cnt=6&units=imperial&appid=6acd9728daeb3f35f10da98fa3f7eb4b";
+    const fivedayURL ="https://api.openweathermap.org/data/2.5/forecast/daily?lat="+lati+"&lon="+longi+"&cnt=6&units=imperial&appid=6acd9728daeb3f35f10da98fa3f7eb4b";
     fetch(fivedayURL)
     .then(function(response) {
         if(response.ok){
