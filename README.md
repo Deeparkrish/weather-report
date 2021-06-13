@@ -1,4 +1,4 @@
-# weather-report
+# Weather-dashboard
 A weather dashboard with a  weather outlook for user chosen city along with the weatherforecast for the next five days. 
 
 
