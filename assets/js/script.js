@@ -94,7 +94,7 @@ var displayFivedayForecast =function (data){
      dateEl.innerHTML=dayArr[i];
      dayContainer.appendChild(dateEl);
      var imgEl =document.querySelector("#img"+i);
-     iconURL = "http://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+".png"
+     iconURL = "https://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+".png"
      imgEl.setAttribute("src",iconURL);
      dayContainer.appendChild(imgEl);
      var temperEl = document.querySelector("#temp"+i);
@@ -147,7 +147,7 @@ var displayCityWeather= function(chosenCityName, data)
    
     //Set the first letter of the City name to uppercase 
     var chosenCityTitle=toTitleCase(chosenCityName);
-    weatherIconURL = "http://openweathermap.org/img/wn/"+data.weather[0].icon+".png"
+    weatherIconURL = "https://openweathermap.org/img/wn/"+data.weather[0].icon+".png"
 
     // find the time zone  - for FUTURE enhancement using moment.tz with NODE. js ( not covered yet)
     var timeOffset =data.timezone;
