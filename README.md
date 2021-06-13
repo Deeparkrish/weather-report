@@ -17,6 +17,7 @@ A weather dashboard with a  weather outlook for user chosen city along with the 
 * The search buttons have been added dynamically using Java script. 
 * When the user clicks on a city in the search histor he is again presented with current and future conditions for that city.
 * The applciation is responsive and has a clean interface. 
+* the HTML page is designed  using Bootstrap and the elements are styled using CSS.
 
 ## Future enchancements :
 * Adding the time zone  and the destination time value, using moment.tz (Node.js) once we learn the technology.
@@ -31,7 +32,8 @@ A weather dashboard with a  weather outlook for user chosen city along with the 
 ## Built With
 * HTML
 * CSS
-* Java Script 
+* Java Script
+* Bootstrap
 * powered by Server-side APIS 
 
 ## Website
