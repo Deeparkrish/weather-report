@@ -18,6 +18,11 @@ A weather dashboard with a  weather outlook for user chosen city along with the 
 * When the user clicks on a city in the search histor he is again presented with current and future conditions for that city.
 * The applciation is responsive and has a clean interface. 
 
+## Future enchancements :
+* Adding the time zone  and the destination time value, using moment.tz (Node.js) once we learn the technology.
+* Displaying  all cities with same name in multpile  geogrpahiclocations and allowing the user to click on his choice, upon which the corresponding weather data
+  is displayed.
+
 ![Wireframe](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/wireframe.jpeg)
 
 ![Webpage](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/screencapture-file-Users-deepakrishnan-Mycode-ChallengeRepo-MyPortfolio-index-html-2021-05-16-23_26_28.png)
